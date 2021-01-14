@@ -1,0 +1,27 @@
+# Copyright 2021 seL4 Project a Series of LF Projects, LLC.
+# SPDX-License-Identifier: GPL-2.0-only
+#
+# This configuration file instructs the Jekyll static site generator how
+# to build the site.  We use TOML as it's easier to handle than YAML.
+# More details:
+#    <https://jekyllrb.com/docs/configuration/>
+#
+
+url           = 'https://sel4.systems'
+in_production = true
+show_toolbox  = false
+on_sel4       = false
+
+# For now, we point into ./content.  Eventually, the other top-level
+# stuff can go away, and this will return to its usual configuration.
+source      = './content'
+destination = './_site'
+exclude     = [ 'README.md' ]
+include     = [ ]
+
+markdown = 'kramdown'
+
+# Set up default values on every page.
+[[defaults]]
+scope  = { path = '' }
+values = { layout = 'sel4' }
